@@ -1,4 +1,4 @@
-package com.maxwell.sort;
+package algorithm.sort;
 
 import org.junit.Test;
 
