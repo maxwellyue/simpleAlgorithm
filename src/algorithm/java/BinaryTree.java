@@ -26,11 +26,11 @@ public class BinaryTree {
 
     //树的节点定义
     public static class Node {
-        int data;//该节点上存放的数据
+        Object data;//该节点上存放的数据
         Node left;//左子节点
         Node right;//右子节点
 
-        public Node(int data) {
+        public Node(Object data) {
             this.data = data;
         }
     }
