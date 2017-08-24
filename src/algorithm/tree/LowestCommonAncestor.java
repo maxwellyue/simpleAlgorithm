@@ -117,7 +117,7 @@ public class LowestCommonAncestor {
      * @param node2
      * @return
      */
-    public Node getLCA3(Node root, Node node1, Node node2){
+    public Node getLCA22(Node root, Node node1, Node node2){
 
         //保存根节点到node1的路径
         List<Node> pathList1 = new ArrayList<>();
@@ -141,10 +141,10 @@ public class LowestCommonAncestor {
                     pathList2.add(root);
                 }
 
-                if(root.equals(node1)){
+                if(root == node1){
                     passNode1 = true;
                 }
-                if(root.equals(node2)){
+                if(root == node2){
                     passNode2 = true;
                 }
 
@@ -162,7 +162,7 @@ public class LowestCommonAncestor {
         if(!pathList1.isEmpty() && !pathList2.isEmpty()){
             int size = pathList1.size() > pathList2.size() ? pathList2.size() : pathList1.size();
             for(int i = 0; i < size; i++){
-                if(!pathList1.get(i).equals(pathList2.get(i))){
+                if(pathList1.get(i) != pathList2.get(i)){
                     return pathList1.get((i-1 >= 0) ? (i-1) : 0);
                 }
             }
