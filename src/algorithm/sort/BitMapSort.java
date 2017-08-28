@@ -9,6 +9,11 @@ import java.util.Arrays;
  *
  * 利用BitMap实现排序
  *
+ * 所谓的Bit-map就是用一个bit位来标记某个元素对应的Value，
+ * 而Key即是该元素。由于采用了Bit为单位来存储数据，
+ * 因此在存储空间方面，可以大大节省。
+ *
+ *
  * 与高效boolean数组的实现类似，
  * 只是这里每个位表示的是待排序的元素的值
  * 而高效boolean数组里，每个位表示的是元素的位置index
