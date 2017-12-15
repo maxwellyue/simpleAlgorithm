@@ -1,5 +1,8 @@
 package algorithm.array;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /************************************************************************************
  * 功能描述：输入一个数组和一个数，在数组中查找两个数，使这两个数的和等于输入的那个数。
  * 创建人：岳增存  yuezc@seentao.com
@@ -53,6 +56,29 @@ public class ConstantSumTwo {
                 hail--;
             }else{
                 head++;
+            }
+        }
+    }
+
+    /**
+     * 借助哈希表实现
+     *
+     * @param array
+     * @param a
+     */
+    public void constantSum3(int[] array, int a){
+        //判空代码
+        //......
+
+        //以数组的值为map的key，以数组的下标为map的value
+        //每次放入的时候，判断map是否含有（a-当前数组某值）这个key
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int i = 0; i < array.length; i++){
+            if(map.containsKey(a- array[i])){
+                System.out.println(array[i] + "  and  " + (a- array[i]));
+                break;//找到一个符合要求的就停止
+            }else {
+                map.put(array[i], i);
             }
         }
     }
