@@ -32,6 +32,9 @@ public class SingleListReverse {
     /**
      * 对单链表进行逆序（原链表的结构发生变化）
      *
+     * 思路：按照原链表的正常顺序循环，每次循环改变当前节点的next指向，实现逆序
+     *
+     *
      *
      * @param head 单链表的头结点
      */
