@@ -28,17 +28,18 @@ package algorithm.leetcode;
 public class ImplementstrStr {
 
     public int strStr(String haystack, String needle) {
-        if(haystack.isEmpty() || needle.isEmpty()){
-            return -1;
+
+        if(haystack.isEmpty()){
+            return needle.isEmpty() ? 0 : -1;
         }
 
-        char[] chars = haystack.toCharArray();
-        char[] needleChars = needle.toCharArray();
-
-        for(int i = 0; i < chars.length; i++){
+        for(int i = 0; i < haystack.length() ; i++){
+            if((haystack.length() - i) < needle.length()){
+                return -1;
+            }
             boolean contains = true;
-            for(int j = 0; j < needleChars.length; j++){
-                if(needleChars[j] != chars[i + j]){
+            for(int j = 0; j < needle.length() ; j++){
+                if((i+j > haystack.length() -1) || (needle.charAt(j) != haystack.charAt(i+j))){
                     contains = false;
                 }
             }
