@@ -39,7 +39,7 @@ public class ImplementstrStr {
             }
             boolean contains = true;
             for(int j = 0; j < needle.length() ; j++){
-                if((i+j > haystack.length() -1) || (needle.charAt(j) != haystack.charAt(i+j))){
+                if(needle.charAt(j) != haystack.charAt(i+j)){
                     contains = false;
                 }
             }
