@@ -57,7 +57,7 @@ public class MergeTwoSortedLists {
         while (l2 != null){
             node.next = l2;
             node = node.next;
-            l1 = l1.next;
+            l2 = l2.next;
         }
 
         return head.next;
