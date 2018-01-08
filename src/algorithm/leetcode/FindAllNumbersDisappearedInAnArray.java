@@ -55,7 +55,10 @@ public class FindAllNumbersDisappearedInAnArray {
         List<Integer> list = new ArrayList<>();
 
         for(int i = 0; i < nums.length; i++){
-            nums[Math.abs(nums[i]) - 1] = -nums[Math.abs(nums[i]) - 1];
+            int val = Math.abs(nums[i]) - 1;
+            if(nums[val] > 0) {
+                nums[val] = -nums[val];
+            }
         }
 
         for(int i = 0; i < nums.length; i++){
