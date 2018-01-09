@@ -28,8 +28,6 @@ public class SortList {
     /**
      * 归并排序的递归写法
      *
-     * 但并不满足使用常量空间的要求，因为是递归压栈，占用空间是O（n）
-     *
      * @param head
      * @return
      */
@@ -44,9 +42,9 @@ public class SortList {
         ListNode slow = head;
         ListNode showPrevious = null;
         while (fast != null && fast.next != null){
+            showPrevious = slow;
             fast = fast.next.next;
             slow = slow.next;
-            showPrevious = slow;
         }
 
         //分割成两段
@@ -71,6 +69,12 @@ public class SortList {
      */
     public ListNode sortList2(ListNode head) {
         //TODO
+
+
+
+
+
+
 
 
         return null;
