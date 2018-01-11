@@ -52,19 +52,27 @@ public class LongestSubstringWithoutRepeatingCharacters {
      *
      * 来自：https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/1812
      *
+     * 滑动窗口方法
+     *
      * @param s
      * @return
      */
     public int lengthOfLongestSubstring2(String s) {
-        int i = 0, j = 0, max = 0;
+
+        int left = 0, right = 0, max = 0;
+
+        //存储不重复子串
         Set<Character> set = new HashSet<>();
 
-        while (j < s.length()) {
-            if (!set.contains(s.charAt(j))) {
-                set.add(s.charAt(j++));
+        while (right < s.length()) {
+            //如果不包含该字符，则放到set中
+            if (!set.contains(s.charAt(right))) {
+                set.add(s.charAt(right));
+                right++;
                 max = Math.max(max, set.size());
-            } else {
-                set.remove(s.charAt(i++));
+            } else {//否则，移除左侧的字符，一次移动一个位置
+                set.remove(s.charAt(left));
+                left++;
             }
         }
 
