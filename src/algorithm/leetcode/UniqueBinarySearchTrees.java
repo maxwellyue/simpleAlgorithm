@@ -52,7 +52,7 @@ public class UniqueBinarySearchTrees {
      * @return
      */
     public int numTrees(int n) {
-        //数字i可以有res[i]个不同非二叉查找树
+        //数字i有res[i]个不同二叉查找树
         int[] res = new int[n+1];
         res[0] = 1;
         res[1] = 1;
