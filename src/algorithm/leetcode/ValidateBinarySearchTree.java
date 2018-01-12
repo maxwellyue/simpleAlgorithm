@@ -65,13 +65,20 @@ public class ValidateBinarySearchTree {
 
     /**
      *
-     * todo 递归写法
+     * 递归写法
+     *
+     * 来自：https://leetcode.com/problems/validate-binary-search-tree/discuss/32109
      *
      * @param root
      * @return
      */
     public boolean isValidBST2(TreeNode root) {
+        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
 
-        return false;
+    public boolean isValidBST(TreeNode root, long minVal, long maxVal) {
+        if (root == null) return true;
+        if (root.val >= maxVal || root.val <= minVal) return false;
+        return isValidBST(root.left, minVal, root.val) && isValidBST(root.right, root.val, maxVal);
     }
 }
