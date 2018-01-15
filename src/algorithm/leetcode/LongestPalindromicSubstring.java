@@ -29,6 +29,17 @@ import org.junit.Test;
  *************************************************************************************/
 public class LongestPalindromicSubstring {
 
+
+    /**
+     *
+     * 以s中的每个字符为中心，向两边扩展，一直到不是回文，
+     * 要注意分奇偶两种情况
+     *
+     *
+     *
+     * @param s
+     * @return
+     */
     public String longestPalindrome(String s) {
         if (s == null || s.length() < 2) {
             return s;
@@ -61,9 +72,9 @@ public class LongestPalindromicSubstring {
                 break;
             }
         }
+        //注意，上面结束之后，i+1, j-1才是符合回文的字符串的位置，而不是i,j
 
-
-        //包括左边界，不包括右边界
+        //包括左边界，不包括右边界，即要截取的是s[i+1, j-1]
         return s.substring(i+1, j);
     }
 
