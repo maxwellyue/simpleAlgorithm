@@ -118,6 +118,29 @@ public class GroupAnagrams {
         return res;
     }
 
+    /**
+     *
+     * 其他思路：
+     *
+     * 关键在于map中key的计算，即用什么作为相似字符串的key
+     * ①使用素数：
+     *      int[] prime = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103};
+     *      for (char ch : s.toCharArray()) {
+     *           key *= prime[ch - 'a'];
+     *      }
+     *
+     *
+     *
+     *
+     *
+     * @param strs
+     * @return
+     */
+    public List<List<String>> groupAnagrams3(String[] strs) {
+
+        return null;
+    }
+
 
 
     @Test
