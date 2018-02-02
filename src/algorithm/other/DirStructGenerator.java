@@ -67,7 +67,7 @@ public class DirStructGenerator {
         try {
             Files.write(path, res.getBytes(StandardCharsets.UTF_8),
                     StandardOpenOption.CREATE,
-                    StandardOpenOption.APPEND);
+                    StandardOpenOption.TRUNCATE_EXISTING);
         } catch (IOException e) {
             e.printStackTrace();
         }
