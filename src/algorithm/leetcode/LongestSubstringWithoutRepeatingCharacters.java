@@ -71,6 +71,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 right++;
                 max = Math.max(max, set.size());
             } else {//否则，移除左侧的字符，一次移动一个位置
+                //因为这种只移动左侧的操作并未改变right指向，所以会继续循环，直到左侧移动到与
+                //此时右侧元素相同的那个字符之后。
                 set.remove(s.charAt(left));
                 left++;
             }
