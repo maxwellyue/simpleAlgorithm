@@ -2,6 +2,8 @@ package algorithm.java;
 
 import org.junit.Test;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /************************************************************************************
@@ -95,6 +97,35 @@ public class BinaryTree {
             visit(root);
         }
     }
+
+    /**
+     *
+     * 层序遍历
+     *
+     * 借助队列来实现
+     *
+     * @param root
+     */
+    public void sequenceOrder(Node root){
+        Queue<Node> queue = new LinkedList<>();
+        Node node = root;
+        if (node != null){
+            queue.offer(node);
+        }
+
+        while (!queue.isEmpty()){
+            node = queue.poll();
+            visit(node);
+            if(node.left != null){
+                queue.offer(node.left);
+            }
+            if(node.right != null){
+                queue.offer(node.right);
+            }
+        }
+    }
+
+
 
 
     /**
